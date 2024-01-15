@@ -6,9 +6,9 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> float:
+    """result of float"""
     result = []
-    while n > 0:
+    for i in range(n):
         delay = await wait_random(n * max_delay)
         result.append(delay)
-        n-1
     return result
