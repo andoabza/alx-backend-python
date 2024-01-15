@@ -4,6 +4,7 @@ import asyncio
 import random
 import time
 
+
 async def wait_random(max_delay=10):
     """async await"""
     s = time.perf_counter()
