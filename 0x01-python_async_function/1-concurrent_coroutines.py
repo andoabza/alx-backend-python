@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """list of delay sec"""
-import asyncio
-import time
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
+lock = asyncio.Lock()
+delays = []
+
 async def wait_n(n, max_delay):
-    """result of float"""
-    result = []
-    for i in range(n):
-        delay = await wait_random(n * max_delay)
-        result.append(delay)
-    return result
+   global delays
+   delays = []
+   tasks = []
+   for _ in range(n):
+       task = asyncio.create_task(wait_random(max_delay))
+       tasks.append(task)
+   await asyncio.gather(*tasks)
+   return sorted(delays)
