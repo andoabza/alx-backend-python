@@ -5,9 +5,9 @@ import random
 import time
 
 
-async def wait_random(max_delay=10):
-    """async await"""
-    s = time.perf_counter()
-    await asyncio.sleep(random.randint(0, max_delay))
-    elapsed = time.perf_counter() - s
-    return elapsed
+async def wait_random(max_delay: int = 10) -> float:
+    """Asynchronous coroutine that takes in an integer argument
+       ."""
+    delay = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
