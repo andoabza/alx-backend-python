@@ -5,7 +5,7 @@ import time
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n, max_delay):
     """result of float"""
     result = []
     for i in range(n):
