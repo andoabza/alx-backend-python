@@ -1,3 +1,4 @@
-s = 'hello'
-s.split(2)
-print(s)
+import requests
+
+request = requests.get('https://google.com')
+print(request.text)
