@@ -30,7 +30,7 @@ class TestAccessNestedMap(unittest.TestCase):
 
 class TestGetJson(unittest.TestCase):
     '''test for get json method'''
-    def test_get_json(self):
+    def test_get_json(self, ):
         '''mock test for get json'''
         mock = Mock()
         mock.json.return_value = {'payload': True}
@@ -44,4 +44,5 @@ class TestGetJson(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    '''main'''
     unittest.main()
