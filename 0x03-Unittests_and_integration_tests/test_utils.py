@@ -33,7 +33,7 @@ class TestGetJson(unittest.TestCase):
     def test_get_json(self):
         '''mock test for get json'''
         mock = Mock()
-        mock.json.return_value = {'payload': True}
+        mock.return_value = {'payload': True}
         with patch('requests.get', return_value=mock):
             self.assertEqual(get_json('http://example.com'),
                              {'payload': True})
