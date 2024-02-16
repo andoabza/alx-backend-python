@@ -1,1 +1,4 @@
-from utils import memo
+from client import GithubOrgClient
+
+Gi = GithubOrgClient
+print(Gi.org.__annotations__)
